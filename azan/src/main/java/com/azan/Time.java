@@ -15,6 +15,17 @@ import static java.lang.String.format;
  * Created by AhmedEltaher on 10/11/16.
  */
 public class Time implements Parcelable, Comparable<Time> {
+    public static final Creator<Time> CREATOR = new Creator<Time>() {
+        @Override
+        public Time createFromParcel(Parcel in) {
+            return new Time(in);
+        }
+
+        @Override
+        public Time[] newArray(int size) {
+            return new Time[size];
+        }
+    };
     private final String TIME_FORMAT = "%02d:%02d:%02d";
     private int hour;
     private int minute;
@@ -25,6 +36,12 @@ public class Time implements Parcelable, Comparable<Time> {
         this.hour = (int) floor(seconds / SECONDS_IN_HOUR);
         this.minute = (int) floor(this.hour / MINUTE_IN_HOUR);
         this.second = (int) floorMod(seconds, SECOND_IN_MINUTE);
+    }
+
+    protected Time(Parcel in) {
+        hour = in.readInt();
+        minute = in.readInt();
+        second = in.readInt();
     }
 
     private double floorMod(double dividend, double divisor) {
@@ -42,30 +59,12 @@ public class Time implements Parcelable, Comparable<Time> {
         return 0;
     }
 
-    protected Time(Parcel in) {
-        hour = in.readInt();
-        minute = in.readInt();
-        second = in.readInt();
-    }
-
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeInt(hour);
         parcel.writeInt(minute);
         parcel.writeInt(second);
     }
-
-    public static final Creator<Time> CREATOR = new Creator<Time>() {
-        @Override
-        public Time createFromParcel(Parcel in) {
-            return new Time(in);
-        }
-
-        @Override
-        public Time[] newArray(int size) {
-            return new Time[size];
-        }
-    };
 
     @Override
     public int compareTo(Time time) {

@@ -1,7 +1,5 @@
 package com.azan;
 
-import android.database.DatabaseUtils;
-
 import com.azan.types.PrayersType;
 
 import java.util.Date;
@@ -47,7 +45,7 @@ public class PrayerTimes {
     }
 
     public Date getPrayTime(int prayersType) {
-        switch (prayersType){
+        switch (prayersType) {
             case 0:
                 return getPrayTime(FAJR);
             case 1:

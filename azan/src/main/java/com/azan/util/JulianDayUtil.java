@@ -63,7 +63,7 @@ public class JulianDayUtil {
      */
     public static double hourAngle(double latitude, double sunAltitude, double declinationDegrees) {
         double cosHa = ((sinDeg(sunAltitude) - sinDeg(latitude) * sinDeg(declinationDegrees))
-            / (cosDeg(latitude) * cosDeg(declinationDegrees)));
+                / (cosDeg(latitude) * cosDeg(declinationDegrees)));
         if (cosHa < -1)
             return Double.NEGATIVE_INFINITY;
         else if (cosHa > 1)
@@ -82,13 +82,13 @@ public class JulianDayUtil {
         double TaiSynodic = (julianDayNumber - BASE_JULIAN_DAY) / JULIAN_DAY_FACTOR;
         double longitude = 280.46607 + SYNODIC_LONGITUDE_FACTOR * TaiSynodic; // average longitude of the sun in degrees
         return (
-            -(1789 + 237 * TaiSynodic) * sinDeg(longitude)
-                - (7146 - 62 * TaiSynodic) * cosDeg(longitude)
-                + (9934 - 14 * TaiSynodic) * sinDeg(TWICE_FACTOR * longitude)
-                - (29 + 5 * TaiSynodic) * cosDeg(TWICE_FACTOR * longitude)
-                + (74 + 10 * TaiSynodic) * sinDeg(TRIPLE_FACTOR * longitude)
-                + (320 - 4 * TaiSynodic) * cosDeg(TRIPLE_FACTOR * longitude)
-                - 212 * sinDeg(FOUR_FACTOR * longitude)) / TAISYNODIC_TOTAL;
+                -(1789 + 237 * TaiSynodic) * sinDeg(longitude)
+                        - (7146 - 62 * TaiSynodic) * cosDeg(longitude)
+                        + (9934 - 14 * TaiSynodic) * sinDeg(TWICE_FACTOR * longitude)
+                        - (29 + 5 * TaiSynodic) * cosDeg(TWICE_FACTOR * longitude)
+                        + (74 + 10 * TaiSynodic) * sinDeg(TRIPLE_FACTOR * longitude)
+                        + (320 - 4 * TaiSynodic) * cosDeg(TRIPLE_FACTOR * longitude)
+                        - 212 * sinDeg(FOUR_FACTOR * longitude)) / TAISYNODIC_TOTAL;
     }
 
     /**
@@ -97,9 +97,9 @@ public class JulianDayUtil {
     public static double sunDeclinationDegrees(double julianDay) {
         double angleOfDate = TWICE_FACTOR * PI * (julianDay - 2451545) / DAYS_PER_YEAR; // angle of date
         return (0.37877
-            + 23.264 * sinDeg(57.297 * angleOfDate - 79.547)
-            + 0.3812 * sinDeg(TWICE_FACTOR * 57.297 * angleOfDate - 82.682)
-            + 0.17132 * sinDeg(TRIPLE_FACTOR * 57.297 * angleOfDate - 59.722));
+                + 23.264 * sinDeg(57.297 * angleOfDate - 79.547)
+                + 0.3812 * sinDeg(TWICE_FACTOR * 57.297 * angleOfDate - 82.682)
+                + 0.17132 * sinDeg(TRIPLE_FACTOR * 57.297 * angleOfDate - 59.722));
     }
 
     /**
@@ -128,7 +128,7 @@ public class JulianDayUtil {
             noviticDay = 0;
         }
         double julianDayCount = (1720994.5 + floor(DAYS_PER_YEAR * year) + floor(DAYS_PER_MONTH * (month + 1))
-            + day + noviticDay);
+                + day + noviticDay);
         return julianDayCount;
     }
 

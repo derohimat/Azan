@@ -18,7 +18,7 @@ public interface Constants {
     double SUN_ALTITUDE_RATIO = 0.0347;
     double SUN_ALTITUDE_NIGHT_CONSTANT = -0.8333;
     double HOURS_IN_DAY_DOUBLE = 24.0;
-    double KAABA_LATITUDE=21.42250833;
-    double KAABA_LONGITUDE=39.82616111;
+    double KAABA_LATITUDE = 21.42250833;
+    double KAABA_LONGITUDE = 39.82616111;
     double TOTAL_DEGREES = 360;
 }

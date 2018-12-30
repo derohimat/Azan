@@ -56,44 +56,44 @@ public class TimeAdjustment {
         return fajr;
     }
 
-    public double getSunrise() {
-        return sunrise;
-    }
-
-    public double getZuhr() {
-        return zuhr;
-    }
-
-    public double getAsr() {
-        return asr;
-    }
-
-    public double getMaghrib() {
-        return maghrib;
-    }
-
-    public double getIsha() {
-        return isha;
-    }
-
     public void setFajr(double fajr) {
         this.fajr = fajr;
+    }
+
+    public double getSunrise() {
+        return sunrise;
     }
 
     public void setSunrise(double sunrise) {
         this.sunrise = sunrise;
     }
 
+    public double getZuhr() {
+        return zuhr;
+    }
+
     public void setZuhr(double zuhr) {
         this.zuhr = zuhr;
+    }
+
+    public double getAsr() {
+        return asr;
     }
 
     public void setAsr(double asr) {
         this.asr = asr;
     }
 
+    public double getMaghrib() {
+        return maghrib;
+    }
+
     public void setMaghrib(double maghrib) {
         this.maghrib = maghrib;
+    }
+
+    public double getIsha() {
+        return isha;
     }
 
     public void setIsha(double isha) {

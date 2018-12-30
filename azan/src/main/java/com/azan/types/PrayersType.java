@@ -14,11 +14,11 @@ public enum PrayersType {
     ISHA(5);
     private int index;
 
-    public int getIndex() {
-        return index;
-    }
-
     PrayersType(int index) {
         this.index = index;
+    }
+
+    public int getIndex() {
+        return index;
     }
 }

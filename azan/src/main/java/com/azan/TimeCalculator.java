@@ -1,7 +1,6 @@
 package com.azan;
 
 import com.azan.types.AngleCalculationType;
-import com.azan.types.PrayersType;
 import com.azan.util.JulianDayUtil;
 
 import java.util.Date;
@@ -142,7 +141,7 @@ public class TimeCalculator {
         double isha = isha(transit, latitude, declinationDegrees, angle.getIshaAngle());
         if (UMM_AL_QURA == angle) {
             double ishaAdjustValue = umElQuraRamadanAdjustment ? UMM_AL_QURA_RAMADAN_ISHA_ADJUSTMENT : UMM_AL_QURA_ISHA_ADJUSTMENT;
-            isha = maghrib(transit, latitude, declinationDegrees, this.height) + ishaAdjustValue ;
+            isha = maghrib(transit, latitude, declinationDegrees, this.height) + ishaAdjustValue;
         }
         PrayerTimes prayerTimes = new PrayerTimes((long) (julianDay - JAVA_DATE_EPOCH_JD) * HOURS_IN_DAY * MINUTE_IN_HOUR *
                 SECOND_IN_MINUTE * MILLIS_IN_SECOND,

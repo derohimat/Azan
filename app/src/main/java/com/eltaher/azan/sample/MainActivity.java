@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         GregorianCalendar date = new GregorianCalendar();
         System.out.println(date.getTimeInMillis());
         PrayerTimes prayerTimes = new TimeCalculator().date(date).location(52.520008, 13.404954,
-                0, 0).timeCalculationMethod(MUHAMMADIYAH).umElQuraRamadanAdjustment(false).calculateTimes();
+                0, 0).timeCalculationMethod(MWL).umElQuraRamadanAdjustment(false).calculateTimes();
         prayerTimes.setUseSecond(true);
         System.out.println("----------------------------------------");
         System.out.println("Fajr ---> " + prayerTimes.getPrayTime(PrayersType.FAJR));
